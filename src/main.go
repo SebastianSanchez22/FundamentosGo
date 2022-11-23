@@ -3,39 +3,26 @@ package main
 import "fmt"
 
 func main() {
+	helloMessage := "Hello"
+	worldMessage := "World"
 
-	// Area cuadrado
-	const baseCuadrado = 10
-	areaCuadrado := baseCuadrado * baseCuadrado
-	fmt.Println("Area cuadrado :", areaCuadrado)
+	// Println
+	fmt.Println(helloMessage, worldMessage)
+	fmt.Println(helloMessage, worldMessage)
 
-	x := 10
-	y := 50
+	// Printf
+	nombre := "Sebastian"
+	edad := 20
 
-	// Suma
-	result := x + y
-	fmt.Println("Suma:", result)
+	fmt.Printf("Soy %s y tengo %d años\n", nombre, edad)
+	fmt.Printf("Soy %v y tengo %v años\n", nombre, edad) // %v se usa si no se sabe el tipo de dato que se va imprimir
 
-	// Resta
-	result = y - x
-	fmt.Println("Resta:", result)
+	// Sprintf
+	message := fmt.Sprintf("Soy %s y tengo %d años", nombre, edad)
+	fmt.Println(message)
 
-	// Multiplicación
-	result = x * y
-	fmt.Println("Multiplicación:", result)
-
-	// División
-	result = y / x
-	fmt.Println("División:", result)
-
-	// Módulo
-	result = y % x
-	fmt.Println("Módulo:", result)
-
-	// Incremental y decremental
-	x++
-	fmt.Println("Incremental:", x)
-	x--
-	fmt.Println("Decremental:", x)
+	// Tipo de dato de una variable
+	fmt.Printf("helloMessage: %T\n", helloMessage)
+	fmt.Printf("edad: %T", edad)
 
 }

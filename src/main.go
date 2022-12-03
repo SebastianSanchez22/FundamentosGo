@@ -2,27 +2,33 @@ package main
 
 import "fmt"
 
-func main() {
-	helloMessage := "Hello"
-	worldMessage := "World"
-
-	// Println
-	fmt.Println(helloMessage, worldMessage)
-	fmt.Println(helloMessage, worldMessage)
-
-	// Printf
-	nombre := "Sebastian"
-	edad := 20
-
-	fmt.Printf("Soy %s y tengo %d años\n", nombre, edad)
-	fmt.Printf("Soy %v y tengo %v años\n", nombre, edad) // %v se usa si no se sabe el tipo de dato que se va imprimir
-
-	// Sprintf
-	message := fmt.Sprintf("Soy %s y tengo %d años", nombre, edad)
+func normalFunction(message string) {
 	fmt.Println(message)
+}
 
-	// Tipo de dato de una variable
-	fmt.Printf("helloMessage: %T\n", helloMessage)
-	fmt.Printf("edad: %T", edad)
+func tripleArgument(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
 
+func returnValue(a int) int {
+	return a * 2
+}
+
+func doubleReturn(a int) (c, d int) {
+	return a, a * 2
+}
+
+func main() {
+	normalFunction("Hola mundo")
+	tripleArgument(1, 2, "hola")
+
+	value := returnValue(2)
+	fmt.Println(value)
+
+	value1, value2 := doubleReturn(2)
+	fmt.Println("Value1 y value2:", value1, value2)
+
+	// Si solo me interesa retornar uno de los dos valores:
+	value3, _ := doubleReturn(3)
+	fmt.Println("Value3:", value3)
 }
